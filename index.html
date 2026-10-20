@@ -1,0 +1,324 @@
+
+<!DOCTYPE html>
+<html lang="my">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>A Special Thadingyut Wish for Ma Ma 🤍</title>
+<style>
+*{box-sizing:border-box}
+:root{--gold:#ffe8ad;--pink:#ffc5e3;--bg:#080b25}
+body{margin:0;background:var(--bg);color:#fff8f5;text-align:center;
+font-family:system-ui,"Myanmar Text",sans-serif;overflow-x:hidden}
+#sky{position:fixed;inset:0;width:100%;height:100%;pointer-events:none}
+#progress{position:fixed;top:0;left:0;height:3px;background:var(--pink);width:0;z-index:20;transition:.4s}
+.page{display:none;position:relative;z-index:1;min-height:100svh;
+padding:58px 17px 35px;align-items:center;justify-content:center;
+flex-direction:column;gap:15px;animation:appear .65s ease}
+.page.active{display:flex}
+h1{font-size:clamp(29px,8vw,46px);color:var(--gold);margin:8px 0}
+h2{font-size:clamp(22px,6vw,31px);margin:8px 0}
+p{font-size:16px;line-height:2;max-width:680px;margin:7px auto}
+button{font:inherit;color:white;background:#ffffff12;border:1px solid #ffffff55;
+border-radius:30px;padding:12px 20px;margin:5px;cursor:pointer}
+button:active{transform:scale(.97)}
+button:disabled{opacity:.4}
+.main{background:linear-gradient(110deg,#a477bd,#dc8db7,#8b91dd);border:0}
+.card{width:min(100%,680px);padding:22px 17px;border-radius:24px;
+border:1px solid #ffffff30;background:#ffffff0b;box-shadow:0 12px 45px #0003}
+.glow{text-shadow:0 0 16px #ffc9e9,0 0 38px #c5aaff}
+.big{font-size:83px;filter:drop-shadow(0 0 18px #ffc3e5);animation:float 2.6s ease-in-out infinite}
+.lantern{font-size:43px;animation:float 3s ease-in-out infinite}
+.small{font-size:13px;opacity:.75}
+#letter{text-align:left;line-height:2;font-size:15px;overflow-wrap:anywhere}
+#letter p{max-width:none}
+#letter h2,#letter h3{text-align:center;color:var(--gold);line-height:1.7}
+#letter strong{color:#ffe7bd}
+#letter .subtitle{text-align:center}
+#letter .wish-section{color:#ffe3f1;font-weight:bold}
+#letter .end{text-align:center}
+#letter .para{margin:15px 0}
+.choices button{display:block;width:min(100%,370px);margin:9px auto}
+iframe{width:min(100%,410px);height:230px;border:0;border-radius:18px}
+#starcount{color:var(--gold);font-size:21px}
+.heart{position:fixed;bottom:-40px;z-index:10;pointer-events:none;animation:rise 7s linear forwards}
+footer{opacity:.65;font-size:12px;padding:15px}
+a{color:var(--gold)}
+@keyframes appear{from{opacity:0;transform:translateY(12px)}to{opacity:1;transform:translateY(0)}}
+@keyframes float{50%{transform:translateY(-12px) rotate(2deg)}}
+@keyframes rise{to{transform:translateY(-110vh) rotate(30deg);opacity:0}}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+</head>
+<body>
+<canvas id="sky"></canvas>
+<div id="progress"></div>
+
+<!-- 1: Mysterious opening -->
+<section class="page active" id="p1">
+  <div class="lantern">✨ 🏮 ✨</div>
+  <p class="small">A LITTLE SURPRISE FOR SOMEONE SPECIAL</p>
+  <h1 class="glow">မမရေ… 🤍</h1>
+  <p>ဒီနေ့ မမအတွက် အထူးပြင်ဆင်ထားတဲ့ Surprise လေးတစ်ခုရှိတယ်။</p>
+  <p>အဆုံးထိ ကြည့်ပေးနော်… 👀</p>
+  <button class="main" onclick="go(2)">Begin the Surprise ✨</button>
+</section>
+
+<!-- 2: Envelope -->
+<section class="page" id="p2">
+  <h2>မမအတွက် စာအိတ်လေး 💌</h2>
+  <button class="big" style="background:none;border:0" onclick="go(3)">💌</button>
+  <p>စာအိတ်လေးကို ဖွင့်ကြည့်ပါနော်။</p>
+  <button class="main" onclick="go(3)">Open the envelope</button>
+</section>
+
+<!-- 3: Lantern reveal -->
+<section class="page" id="p3">
+  <div class="lantern">🏮 🪷 🏮</div>
+  <h1 class="glow">သီတင်းကျွတ်ညလေး…</h1>
+  <p>အလင်းရောင်လေးတွေကြားမှာ မမအတွက် ပြင်ဆင်ထားတဲ့ အမှတ်တရလေးတစ်ခု။ 🤍</p>
+  <button onclick="go(4)">ဆက်ကြည့်မယ် →</button>
+</section>
+
+<!-- 4: TikTok video -->
+<section class="page" id="p4">
+  <p class="small">A LITTLE VIDEO FOR MA MA</p>
+  <h2>မမအတွက် Video လေး 🎬</h2>
+  <div class="card">
+    <div class="big">🎞️</div>
+    <p>အရင်ဆုံး ဒီ video လေးကို ကြည့်လိုက်နော်။</p>
+    <a href="https://vt.tiktok.com/ZSbqG3pKD/" target="_blank" rel="noopener">
+      <button class="main">Watch TikTok ↗</button>
+    </a>
+    <p class="small">Video ကြည့်ပြီးရင် ဒီစာမျက်နှာကို ပြန်လာပြီး ဆက်နှိပ်ပါနော်။</p>
+  </div>
+  <button onclick="go(5)">ကြည့်ပြီးပြီ →</button>
+</section>
+
+<!-- 5: Personal message introduction -->
+<section class="page" id="p5">
+  <div class="big">🤍</div>
+  <h2>မမအတွက် ဆုတောင်းလေးတွေ…</h2>
+  <div class="card">
+    <p>ဒီသီတင်းကျွတ်လေးမှာ မမအတွက် ကောင်းခြင်းလေးတွေ အများကြီး ဆုတောင်းပေးချင်တယ်။ 🪷</p>
+    <p>နောက်ထပ်အဆင့်လေးတွေကို ဆက်ကြည့်လိုက်နော်။ ✨</p>
+  </div>
+  <button onclick="go(6)">Continue →</button>
+</section>
+
+<!-- 6: Star wish -->
+<section class="page" id="p6">
+  <h2>မမအတွက် ကြယ်လေးတစ်ပွင့် ⭐</h2>
+  <p>ကြယ်လေးကို နှိပ်ကြည့်ပါနော်။</p>
+  <button class="big" style="background:none;border:0" onclick="document.getElementById('starwish').textContent='မမရဲ့ ဆန္ဒလေးတွေ ပြည့်ဝပါစေ။ 🤍';this.textContent='🌟'">⭐</button>
+  <p id="starwish"></p>
+  <button onclick="go(7)">ဆက်သွားမယ် →</button>
+</section>
+
+<!-- 7: Question -->
+<section class="page" id="p7">
+  <h2>မေးခွန်းလေးတစ်ခု 👀</h2>
+  <p>မမအတွက် ဘယ်အရာလေးတွေ အမြဲပြည့်စုံနေစေချင်လဲ?</p>
+  <div class="choices" id="choices">
+    <button onclick="choose(this)">🤍 စိတ်ချမ်းသာမှု</button>
+    <button onclick="choose(this)">🌷 ကိုယ်ကျန်းမာမှု</button>
+    <button onclick="choose(this)">✨ ဆန္ဒလေးတွေ ပြည့်ဝမှု</button>
+  </div>
+  <p id="answer"></p>
+  <button onclick="go(8)">ဆက်မယ် →</button>
+</section>
+
+<!-- 8: Warm wish -->
+<section class="page" id="p8">
+  <div class="lantern">🪷 ✨ 🪷</div>
+  <h2>နွေးထွေးတဲ့ ဆုတောင်းလေး…</h2>
+  <p>မမရဲ့ ကြိုးစားမှုတွေအားလုံး အောင်မြင်မှုလေးတွေနဲ့ ပြန်လည်ပွင့်လန်းလာပါစေ။</p>
+  <p>မမရဲ့နေ့ရက်တိုင်းမှာ အပြုံးလေးတွေ ပိုများလာပါစေ။ 🤍</p>
+  <button onclick="go(9)">ဆက်ကြည့်မယ် →</button>
+</section>
+
+<!-- 9: Fake ending -->
+<section class="page" id="p9">
+  <div class="big">👀</div>
+  <h1 class="glow">ခဏလေး…</h1>
+  <p>ဒီလောက်နဲ့ ပြီးပြီလို့ ထင်နေတာလား?</p>
+  <p>မမအတွက် Surprise လေး နောက်ထပ်ရှိသေးတယ်နော်။ 🤍</p>
+  <button class="main" onclick="go(10)">Show me ✨</button>
+</section>
+
+<!-- 10: Song -->
+<section class="page" id="p10">
+  <div class="lantern">🎵 🤍 🎵</div>
+  <h2>A Little Music Moment</h2>
+  <p>မမအတွက် ရွေးထားတဲ့ သီချင်းလေး။</p>
+  <iframe src="https://www.youtube-nocookie.com/embed/5HZ9qeFjhYk?rel=0"
+    title="Song for Ma Ma"
+    allow="accelerometer;autoplay;clipboard-write;encrypted-media;gyroscope;picture-in-picture"
+    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+  <p class="small">သီချင်းဖွင့်ဖို့ Play ခလုတ်ကို နှိပ်ပါနော်။</p>
+  <button onclick="go(11)">နောက်တစ်ဆင့် →</button>
+</section>
+
+<!-- 11: Collect stars -->
+<section class="page" id="p11">
+  <h2>ကြယ်လေး ၅ ပွင့် စုကြမယ် ⭐</h2>
+  <p>ကြယ်လေးတစ်ပွင့်ချင်း နှိပ်လိုက်ပါ။</p>
+  <div id="starcount">0 / 5 ⭐</div>
+  <div id="starbuttons">
+    <button onclick="collect(this)">⭐</button>
+    <button onclick="collect(this)">🌟</button>
+    <button onclick="collect(this)">✨</button>
+    <button onclick="collect(this)">⭐</button>
+    <button onclick="collect(this)">🌟</button>
+  </div>
+  <button id="nextstar" disabled onclick="go(12)">ကြယ်လေးတွေ ပြည့်ပြီ →</button>
+</section>
+
+<!-- 12: Final question -->
+<section class="page" id="p12">
+  <div class="big">🪷</div>
+  <h2>နောက်ဆုံးမတိုင်ခင်…</h2>
+  <p>မမအတွက် ပြင်ဆင်ထားတဲ့ ဆုတောင်းစာလေးကို ဖတ်ကြည့်မလား? 🤍</p>
+  <button class="main" onclick="go(13)">ဖတ်ကြည့်မယ် 💌</button>
+</section>
+
+<!-- 13: Grand reveal -->
+<section class="page" id="p13">
+  <div class="lantern">🏮 🎆 🏮</div>
+  <p class="small">A SPECIAL WISH FOR YOU</p>
+  <h1 class="glow">Happy Thadingyut</h1>
+  <h2>Ma Ma 🤍🪷</h2>
+  <p>မမအတွက် ဆုတောင်းထားတဲ့ စာလေး…</p>
+  <button class="main" onclick="go(14)">Open Your Wish 💌</button>
+</section>
+
+<!-- 14: Exact wish letter supplied by user -->
+<section class="page" id="p14">
+<div class="card" id="letter">
+
+<h2>🪷 A Special Thadingyut Wish for Ma Ma 🤍</h2>
+<p class="subtitle"><strong>With Lots of Warm Wishes ✨</strong></p>
+
+<p><strong>သီတင်းကျွတ်အခါသမယလေးမှာ မမရေ… 🤍🎆</strong></p>
+
+<p>ဒီလို အလင်းရောင်လေးတွေ လှပနေတဲ့ သီတင်းကျွတ်ညလေးမှာ မမအတွက် ဆုတောင်းစကားလေးတွေ အများကြီး ပြောပေးချင်တယ်နော်။ တစ်နှစ်မှာ သီတင်းကျွတ်ဆိုတဲ့ အချိန်လေးတစ်ခါ ရောက်လာသလို မမရဲ့ဘဝထဲကိုလည်း ကောင်းခြင်းတွေ၊ ပျော်ရွှင်ခြင်းတွေနဲ့ လှပတဲ့အမှတ်တရတွေ အကြိမ်ကြိမ် ရောက်လာပါစေလို့ ဆုတောင်းပေးပါတယ်။ 🪷</p>
+
+<p>မမရဲ့ နေ့ရက်တိုင်းမှာ အပြုံးလေးတွေ အမြဲရှိနေပါစေနော်။ မမပြုံးတဲ့အခါ စိတ်ထဲမှာလည်း တကယ်ပျော်ရွှင်နေနိုင်ပါစေ။ အပြင်ပန်းမှာပဲ ပြုံးနေရပြီး အတွင်းစိတ်မှာ ပင်ပန်းနေရတဲ့နေ့တွေ နည်းပါးပါစေ။ မမရဲ့အပြုံးလေးတွေက ပျော်ရွှင်မှုအစစ်အမှန်တွေနဲ့ ပြည့်နေပါစေ။ 🤍</p>
+
+<p class="wish-section">🌷 မမ ကျန်းမာပျော်ရွှင်ပါစေ။</p>
+
+<p>မမရဲ့ကျန်းမာရေးလေးလည်း အမြဲကောင်းမွန်နေပါစေ။ အိပ်ရေးဝဝအိပ်နိုင်ပါစေ၊ အစားအစာလည်း မှန်မှန်စားနိုင်ပါစေ၊ ကိုယ့်ကိုယ်ကို ဂရုစိုက်ဖို့လည်း မမ မမေ့ပါစေနဲ့နော်။ စာတွေလုပ်ရင်း၊ အလုပ်တွေလုပ်ရင်း ပင်ပန်းလာတဲ့အခါ ကိုယ့်ကိုယ်ကို အနားပေးဖို့လည်း မမ မှတ်မိနေပါစေ။ မမရဲ့ကိုယ်ရော စိတ်ရော ကျန်းမာပြီး အေးချမ်းနေပါစေ။ 🫶</p>
+
+<p class="wish-section">✨ မမ ကြိုးစားသမျှ အဆင်ပြေပါစေ။</p>
+
+<p>မမရဲ့ ပညာရေးမှာလည်း အဆင်ပြေပါစေ။ စာလေ့လာတဲ့အခါ နားလည်လွယ်ပါစေ၊ ကြိုးစားထားသမျှလည်း ရလဒ်ကောင်းတွေ ပြန်ရပါစေ။ တစ်ခါတလေ ခက်ခဲတဲ့အရာတွေ ကြုံလာရင်တောင် မမကိုယ်တိုင်ကို ယုံကြည်မှု မပျောက်သွားပါစေနဲ့။ မမရဲ့ရည်မှန်းချက်လေးတွေဆီကို တစ်လှမ်းချင်း နီးကပ်သွားနိုင်ပါစေ။ မမကြိုးစားခဲ့တဲ့အချိန်တွေ အလဟဿမဖြစ်ဘဲ တစ်နေ့မှာ ကိုယ်တိုင်ဂုဏ်ယူနိုင်တဲ့ အောင်မြင်မှုလေးတွေ ရရှိပါစေနော်။ 🌟</p>
+
+<p class="wish-section">🌼 မမရဲ့ ဆန္ဒလေးတွေ ပြည့်ဝပါစေ။</p>
+
+<p>မမစိတ်ထဲမှာ မျှော်လင့်ထားတဲ့အရာလေးတွေ၊ တိတ်တိတ်လေး ဆုတောင်းထားတဲ့အရာလေးတွေ၊ တစ်နေ့နေ့မှာ ဖြစ်လာစေချင်တဲ့ အိပ်မက်လေးတွေ တစ်ခုချင်းစီ ပြည့်ဝလာပါစေ။ ချက်ချင်းမဖြစ်လာသေးရင်တောင် စိတ်ဓာတ်မကျဘဲ ဆက်လက်ကြိုးစားနိုင်ပါစေ။ မမမျှော်လင့်ထားတာထက်တောင် ပိုကောင်းတဲ့အရာလေးတွေ မမဘဝထဲကို ရောက်လာပါစေ။ မမအတွက် သင့်တော်တဲ့အခွင့်အရေးကောင်းတွေ၊ လူကောင်းတွေနဲ့ အတွေ့အကြုံကောင်းတွေ အများကြီး ကြုံတွေ့ရပါစေ။ 💫</p>
+
+<p class="wish-section">🌙 မမရဲ့ စိတ်ပင်ပန်းမှုတွေ လျော့နည်းပါစေ။</p>
+
+<p>ဘယ်သူမှမသိတဲ့ မမရဲ့ပင်ပန်းမှုတွေ၊ စိတ်ထဲမှာ တိတ်တိတ်လေး ခံစားနေရတဲ့အရာတွေ ရှိခဲ့ရင်လည်း အဲဒီအရာတွေကို ဖြည်းဖြည်းချင်း ကျော်ဖြတ်နိုင်ပါစေနော်။ အရာအားလုံးကို တစ်ယောက်တည်း အမြဲတမ်း သည်းခံနေရစရာ မလိုဘူးဆိုတာလည်း မမ သိထားပါစေ။ ပင်ပန်းတဲ့အခါ အနားယူနိုင်ပါစေ၊ ဝမ်းနည်းတဲ့အခါ ကိုယ့်ခံစားချက်ကို နားလည်ပေးနိုင်ပါစေ။ မမရဲ့စိတ်ကလေး အေးချမ်းပြီး ကိုယ့်ကိုယ်ကို နူးနူးညံ့ညံ့ ဆက်ဆံတတ်ပါစေ။ 🤍</p>
+
+<p class="wish-section">🕊️ မမအနားမှာ လူကောင်းတွေ ရှိနေပါစေ။</p>
+
+<p>မမကို နားလည်ပေးတဲ့သူတွေ၊ မမရဲ့ခံစားချက်တွေကို တန်ဖိုးထားပေးတဲ့သူတွေ၊ မမပင်ပန်းနေတဲ့အခါ အားပေးစကားလေး ပြောပေးမယ့်သူတွေ အနားမှာ ရှိနေပါစေ။ မမကို ပျော်ရွှင်စေတဲ့ အမှတ်တရလေးတွေ အများကြီး ပိုင်ဆိုင်နိုင်ပါစေ။ မမရဲ့ဘဝထဲကို ရောက်လာတဲ့ ကောင်းမွန်တဲ့ဆက်ဆံရေးတိုင်းကလည်း မမအတွက် နွေးထွေးမှုနဲ့ အေးချမ်းမှုတွေ ယူဆောင်လာပေးပါစေ။ 🌷</p>
+
+<p class="wish-section">🎐 မမရဲ့ အနာဂတ်လေး လှပပါစေ။</p>
+
+<p>ဒီနေ့ မမကြိုးစားနေတဲ့အရာလေးတွေက နောင်တစ်ချိန်မှာ မမအတွက် ဂုဏ်ယူစရာအမှတ်တရတွေ ဖြစ်လာပါစေ။ မမကိုယ်တိုင် ရွေးချယ်ထားတဲ့လမ်းပေါ်မှာ ယုံကြည်မှုရှိရှိ လျှောက်လှမ်းနိုင်ပါစေ။ အခက်အခဲတွေ ကြုံရတဲ့အခါ ဖြေရှင်းနိုင်မယ့်နည်းလမ်းတွေ ရှာတွေ့ပါစေ။ မမရဲ့ဘဝမှာ ဝမ်းသာရတဲ့သတင်းတွေ၊ အောင်မြင်မှုလေးတွေ၊ ရင်ထဲကနေ တကယ်ပျော်ရွှင်ရတဲ့အချိန်လေးတွေ အများကြီး ရှိလာပါစေနော်။ 🌟</p>
+
+<p class="wish-section">🪷 ဒီသီတင်းကျွတ်ညလေးမှာ အထူးဆုတောင်းပေးချင်တာက…</p>
+
+<p>မမ ဘယ်နေရာမှာပဲ ရှိနေပါစေ၊ ဘာတွေပဲ လုပ်ဆောင်နေပါစေ၊ မမရဲ့စိတ်ထဲမှာ အေးချမ်းမှုလေး ရှိနေပါစေ။ မမရဲ့ဘဝမှာ ကောင်းတဲ့အရာတွေကို လက်ခံရရှိနိုင်သလို မကောင်းတဲ့အချိန်တွေကိုလည်း ခွန်အားရှိရှိ ဖြတ်သန်းနိုင်ပါစေ။ မမရဲ့ကြိုးစားမှုတွေကို တန်ဖိုးထားတတ်ပါစေ။ ကိုယ့်ရဲ့တိုးတက်မှုလေးတွေကိုလည်း အသိအမှတ်ပြုပြီး ကိုယ့်ကိုယ်ကို ဂုဏ်ယူတတ်ပါစေနော်။ 🤍</p>
+
+<p>သီတင်းကျွတ်မီးရောင်လေးတွေလို မမရဲ့ဘဝလေးလည်း တောက်ပနေပါစေ။ လပြည့်ညရဲ့ အေးချမ်းမှုလေးလို မမရဲ့စိတ်ကလေးလည်း ငြိမ်းချမ်းနေပါစေ။ ကြယ်လေးတွေ များပြားသလို မမရဲ့ဘဝထဲမှာ ပျော်ရွှင်စရာအကြောင်းအရင်းလေးတွေလည်း များပြားလာပါစေ။ ✨🌙</p>
+
+<p>ဒီသီတင်းကျွတ်ကနေစပြီး မမအတွက် ကောင်းခြင်းတွေ တစ်ခုပြီးတစ်ခု ရောက်လာပါစေ။ မမရဲ့အိပ်မက်လေးတွေ အကောင်အထည်ဖော်နိုင်ပါစေ။ မမရဲ့မျက်နှာပေါ်မှာ အပြုံးလေးတွေ ပိုများလာပါစေ။ မမကိုယ်တိုင်လည်း ကိုယ့်ဘဝလေးကို ပျော်ရွှင်စွာ ဖြတ်သန်းနိုင်ပါစေနော်။</p>
+
+<h3>Happy Thadingyut, Ma Ma 🤍🪷</h3>
+
+<p>ဒီသီတင်းကျွတ်လေးမှာ မမအတွက် ဆုတောင်းပေးထားသမျှ ကောင်းခြင်းတွေ တကယ်ဖြစ်လာပါစေ။ မမရဲ့နေ့ရက်တိုင်းဟာ အဓိပ္ပာယ်ရှိပြီး လှပတဲ့အမှတ်တရလေးတွေနဲ့ ပြည့်နေပါစေ။</p>
+
+<p class="end"><strong>မမအတွက် ကောင်းခြင်းတွေ အမြဲဆုတောင်းပေးနေပါတယ်။ 🤍🎆</strong></p>
+
+<p class="end">With lots of warm wishes. 🪷✨</p>
+
+</div>
+<button class="main" onclick="go(15)">နောက်ဆုံး Surprise 🤍</button>
+</section>
+
+<!-- 15: Ending -->
+<section class="page" id="p15">
+  <div class="lantern">🤍 🏮 🪷 🏮 🤍</div>
+  <p class="small">WITH LOTS OF WARM WISHES</p>
+  <h1 class="glow">For Ma Ma…</h1>
+  <p>Happy Thadingyut, Ma Ma 🤍🪷</p>
+  <p>မမအတွက် ကောင်းခြင်းတွေ အမြဲဆုတောင်းပေးနေပါတယ်။ 🤍🎆</p>
+  <button class="main" onclick="hearts()">✨ Surprise လေးကို ဖွင့်မယ်</button>
+  <button onclick="go(1)">အစကနေ ပြန်ကြည့်မယ် ↻</button>
+  <footer>Made with warm wishes 🪷</footer>
+</section>
+
+<script>
+function go(n){
+ document.querySelectorAll('.page').forEach(p=>p.classList.remove('active'));
+ document.getElementById('p'+n).classList.add('active');
+ document.getElementById('progress').style.width=(n/15*100)+'%';
+ window.scrollTo({top:0,behavior:'smooth'});
+ if(n===13||n===15)hearts();
+}
+function choose(btn){
+ document.querySelectorAll('#choices button').forEach(b=>b.disabled=true);
+ btn.style.background='#d99ac755';
+ document.getElementById('answer').textContent=
+ 'မမအတွက် ကောင်းခြင်းတွေအားလုံး ပြည့်စုံပါစေနော်။ 🤍';
+}
+let collected=0;
+function collect(btn){
+ if(btn.disabled)return;
+ btn.disabled=true;btn.textContent='💖';collected++;
+ document.getElementById('starcount').textContent=collected+' / 5 ⭐';
+ if(collected===5){
+  document.getElementById('starcount').textContent='ကြယ် ၅ ပွင့် ပြည့်ပြီ! ✨';
+  document.getElementById('nextstar').disabled=false;
+ }
+}
+function hearts(){
+ for(let i=0;i<30;i++){
+  let h=document.createElement('span');
+  h.className='heart';
+  h.textContent=['🤍','💗','✨','🪷','🏮'][Math.floor(Math.random()*5)];
+  h.style.left=Math.random()*100+'vw';
+  h.style.animationDelay=Math.random()*2+'s';
+  h.style.fontSize=(18+Math.random()*24)+'px';
+  document.body.appendChild(h);
+  setTimeout(()=>h.remove(),8500);
+ }
+}
+const c=document.getElementById('sky'),ctx=c.getContext('2d');
+let dots=[];
+function resize(){
+ c.width=innerWidth*devicePixelRatio;
+ c.height=innerHeight*devicePixelRatio;
+ ctx.setTransform(devicePixelRatio,0,0,devicePixelRatio,0,0);
+ dots=Array.from({length:110},()=>({
+  x:Math.random()*innerWidth,y:Math.random()*innerHeight,
+  r:Math.random()*1.5+.3,a:Math.random()*6,v:Math.random()*.02+.004
+ }));
+}
+function draw(){
+ ctx.clearRect(0,0,innerWidth,innerHeight);
+ for(const d of dots){
+  d.a+=d.v;
+  ctx.globalAlpha=.2+Math.abs(Math.sin(d.a))*.8;
+  ctx.fillStyle='#fff0c8';
+  ctx.beginPath();ctx.arc(d.x,d.y,d.r,0,Math.PI*2);ctx.fill();
+ }
+ ctx.globalAlpha=1;requestAnimationFrame(draw);
+}
+addEventListener('resize',resize);resize();draw();
+</script>
+</body>
+</html>
